@@ -98,7 +98,7 @@ const Login: React.FC = () => {
 
           <Stack className={styles.mail}>
             <Stack className={styles.mailIcon}></Stack>
-            <Stack className={styles.mailId}>a7676@gmail.com</Stack>
+            <Stack className={styles.mailId}> </Stack>
           </Stack>
         </Box>
 
