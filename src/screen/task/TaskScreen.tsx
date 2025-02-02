@@ -41,25 +41,25 @@ const TaskScreen = () => {
     {
       id: 1,
       title: "All",
-      content: "21",
+      content: "0",
       color: "#cddefe",
     },
     {
       id: 2,
       title: "Take",
-      content: "12",
+      content: "0",
       color: "#cddefe",
     },
     {
       id: 3,
       title: "Give",
-      content: "14",
+      content: "0",
       color: "#fff1cc",
     },
     {
       id: 4,
       title: "Spent",
-      content: "14",
+      content: "0",
       color: "#dbf0e7",
     },
   ];
