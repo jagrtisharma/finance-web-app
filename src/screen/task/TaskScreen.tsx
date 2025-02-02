@@ -11,6 +11,10 @@ const TaskScreen = () => {
   const { task: tasks, setTask } = useUserStore();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [takeMoney, setTakeMoney] = useState(0);
+  const [giveMoney, setGiveMoney] = useState(0);
+  const [spentMoney, setSpentMoney] = useState(0);
+
   const filteredTasks = tasks.filter((task) => {
     // Filter by category based on selectedOption
     const categoryMap: { [key: number]: string } = {
@@ -28,6 +32,23 @@ const TaskScreen = () => {
 
     return true;
   });
+
+  useEffect(() => {
+    const totalGive = tasks
+      .filter((task) => task.category === "Give")
+      .reduce((sum, task) => sum + Number(task.money), 0);
+    const totalTake = tasks
+      .filter((task) => task.category === "Take")
+      .reduce((sum, task) => sum + Number(task.money), 0);
+    const totalSpent = tasks
+      .filter((task) => task.category === "Spent")
+      .reduce((sum, task) => sum + Number(task.money), 0);
+
+    setGiveMoney(totalGive);
+    setTakeMoney(totalTake);
+    setSpentMoney(totalSpent);
+  }, [tasks]);
+
   // Apply search query filtering
   const displayedTasks = filteredTasks.filter((task) =>
     task.title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -41,25 +62,25 @@ const TaskScreen = () => {
     {
       id: 1,
       title: "All",
-      content: "0",
+      content: takeMoney + giveMoney + spentMoney,
       color: "#cddefe",
     },
     {
       id: 2,
       title: "Take",
-      content: "0",
+      content: takeMoney,
       color: "#cddefe",
     },
     {
       id: 3,
       title: "Give",
-      content: "0",
+      content: giveMoney,
       color: "#fff1cc",
     },
     {
       id: 4,
       title: "Spent",
-      content: "0",
+      content: spentMoney,
       color: "#dbf0e7",
     },
   ];
@@ -144,7 +165,7 @@ const TaskScreen = () => {
                   {card.title}
                 </Stack>
                 <Stack className={Styles.OrderType_card_value}>
-                  {card.content ? card.content : 0}
+                  {card.content ? card.content : 0}/-
                 </Stack>
               </Stack>
             </>
