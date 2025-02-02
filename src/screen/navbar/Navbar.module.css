@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+* {
+  font-family: Outfit, sans-serif;
+}
+
+.navbar_container {
+  height: auto;
+  display: flex;
+  flex-direction: column !important;
+  background: transparent;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease-in-out;
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.149);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar_contact {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  background-color: #1c4670;
+  color: #ffffff;
+  height: auto;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.navbar_layout {
+  background: #ffffff !important;
+  width: 80%;
+  height: auto;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between;
+  background: transparent;
+  align-items: center;
+}
+
+.navbar_scrolled {
+  background-color: #fff;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.149);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar_logo_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar_contact_layout {
+  width: 40%;
+  display: flex;
+  flex-direction: row !important;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact_layout {
+  display: flex;
+  flex-direction: row !important;
+  gap: 5px;
+}
+
+.navbar_logo {
+  width: 159px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.navbar_options {
+  display: flex;
+  flex-direction: row !important;
+  gap: 40px;
+  align-items: center;
+}
+
+.navbar_options_text {
+  text-wrap: nowrap;
+  color: #272d37;
+  font-family: Outfit, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+  text-decoration: none;
+  text-transform: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.navbar_notmal_option {
+  color: #272d37;
+  font-family: Outfit, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  /* text-decoration: underline; */
+  cursor: pointer;
+}
+
+.navbar_options_text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #272d37;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar_options_text:hover::after {
+  width: 100%;
+}
+
+/* Responsive CSS */
+@media (max-width: 1200px) {
+  .navbar_container {
+    width: 100%;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.149);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+  .navbar_contact {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #1c4670;
+    color: #ffffff;
+
+    cursor: pointer;
+  }
+
+  .navbar_contact_layout {
+    width: 100%;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+  .navbar_layout {
+    background: #ffffff !important;
+    width: 100%;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+    background: transparent;
+    align-items: center;
+  }
+  .navbar_logo_container {
+    width: 30%;
+  }
+
+  .navbar_options {
+    width: 30%;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .layout_text {
+    font-size: 14px;
+  }
+  .layout_icon {
+    font-size: 14px;
+  }
+  .navbar_logo_container {
+    width: 50%;
+  }
+
+  .navbar_options {
+    width: 35%;
+    gap: 20px;
+  }
+}
