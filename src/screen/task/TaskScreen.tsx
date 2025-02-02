@@ -236,10 +236,12 @@ const TaskScreen = () => {
             <>
               <Stack className={Styles.title_card}>
                 {selectedOption == 0
-                  ? "All Task"
+                  ? "All Spend"
                   : selectedOption == 1
-                  ? "Completed Task"
-                  : "Incomplete Task"}
+                  ? "Give"
+                  : selectedOption == 2
+                  ? "Take"
+                  : "Spend"}
               </Stack>
               <TaskCard tasks={displayedTasks} />
             </>
