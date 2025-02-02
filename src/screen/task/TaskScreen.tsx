@@ -241,7 +241,7 @@ const TaskScreen = () => {
                   ? "Give"
                   : selectedOption == 2
                   ? "Take"
-                  : "Spend"}
+                  : "Spent"}
               </Stack>
               <TaskCard tasks={displayedTasks} />
             </>
