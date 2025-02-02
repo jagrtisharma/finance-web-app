@@ -43,7 +43,7 @@ const Navbar = () => {
               <Stack className={Styles.layout_icon}>
                 <MailIcon sx={{ fontSize: { xs: "18px", md: "24px" } }} />
               </Stack>
-              <Stack className={Styles.layout_text}>www.register.in</Stack>
+              <Stack className={Styles.layout_text}>www.finance.in</Stack>
             </Stack>
             <Stack>|</Stack>
             <Stack className={Styles.contact_layout}>
@@ -86,7 +86,7 @@ const Navbar = () => {
             <Stack
               className={Styles.navbar_logo}
               onClick={() => {
-                navigate("/");
+                navigate("/task");
               }}
             >
               CashBook
@@ -97,7 +97,7 @@ const Navbar = () => {
           <Stack className={Styles.navbar_options}>
             <Stack
               className={`  ${
-                location.pathname !== "/"
+                location.pathname !== "/task"
                   ? Styles.navbar_options_text
                   : Styles.navbar_notmal_option
               }`}
@@ -106,6 +106,18 @@ const Navbar = () => {
               }}
             >
               Finace
+            </Stack>
+            <Stack
+              className={`  ${
+                location.pathname !== "/spentAnalysis"
+                  ? Styles.navbar_options_text
+                  : Styles.navbar_notmal_option
+              }`}
+              onClick={() => {
+                navigate("/spentAnalysis");
+              }}
+            >
+              Spent Analysis
             </Stack>
             <Stack
               className={`  ${
